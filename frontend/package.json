@@ -1,0 +1,27 @@
+{
+  "name": "ee",
+  "version": "4.0.0",
+  "scripts": {
+    "dev": "vite --host --port 8080",
+    "serve": "vite --host --port 8080",
+    "build-staging": "vite build --mode staging",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "element-plus": "^2.9.7",
+    "vue": "^3.5.12",
+    "vue-router": "^4.0.14"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
+    "@vue/compiler-sfc": "^3.2.33",
+    "sass": "^1.86.2",
+    "sass-loader": "^16.0.5",
+    "terser": "^5.19.1",
+    "unocss": "^66.1.0-beta.8",
+    "unplugin-auto-import": "^19.1.2",
+    "unplugin-vue-components": "^28.4.1",
+    "vite": "^5.4.11"
+  }
+}
