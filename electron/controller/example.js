@@ -2,6 +2,7 @@
 
 const { logger } = require('ee-core/log');
 const { exampleService } = require('../service/example');
+const jsonDatabase = require('../service/jsonDatabase');
 
 /**
  * example
@@ -24,7 +25,24 @@ class ExampleController {
 
     return 'hello electron-egg';
   }
+
+  async addUser(args) {
+    return jsonDatabase.addUser(args);
+  }
+
+  async getUsers() {
+    return jsonDatabase.getUsers();
+  }
+
+  async updateUser(args) {
+    const { id, ...updatedUser } = args;
+    return jsonDatabase.updateUser(id, updatedUser);
+  }
+
+  async deleteUser(args) {
+    return jsonDatabase.deleteUser(args.id);
+  }
 }
 ExampleController.toString = () => '[class ExampleController]';
 
-module.exports = ExampleController; 
+module.exports = ExampleController;

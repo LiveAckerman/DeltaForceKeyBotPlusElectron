@@ -7,7 +7,10 @@
  const { mouse, keyboard, Key, screen, Region } = require('@nut-tree/nut-js');
  const tesseract = require('node-tesseract-ocr');
  const path = require('path');
-const fs = require('fs');
+ const fs = require('fs');
+
+ // 加载控制器
+ require(path.join(__dirname, 'controller/example.js'));
 
 function preload() {
    logger.info('[preload] load 1');

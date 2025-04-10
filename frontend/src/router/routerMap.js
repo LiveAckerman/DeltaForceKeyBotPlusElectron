@@ -4,31 +4,38 @@
  */
 
 const constantRouterMap = [
-  {
-    path: '/',
-    name: 'Home',
-    redirect: { name: 'home' },
-    children: [
-      {
-        path: '/home',
-        name: 'home',
-        redirect: { name: 'config' },
+   {
+        path: '/',
+        name: 'Home',
+        redirect: { name: '首页' },
         component: () => import('@/views/index.vue'),
         children: [
           {
+            path: 'home',
+            name: '首页',
+            component: () => import('@/views/home.vue'),
+            meta: {
+              icon: 'HomeFilled'
+            }
+          },
+          {
             path: 'config',
-            name: 'config',
-            component: () => import('@/views/config.vue')
+            name: '配置',
+            component: () => import('@/views/config.vue'),
+            meta: {
+              icon: 'Setting'
+            }
           },
           {
             path: 'run',
-            name: 'run',
-            component: () => import('@/views/run.vue')
+            name: '运行',
+            component: () => import('@/views/run.vue'),
+            meta: {
+              icon: 'IconMenu'
+            }
           },
         ]
       },
-    ]
-  },
 ]
 
 export default constantRouterMap

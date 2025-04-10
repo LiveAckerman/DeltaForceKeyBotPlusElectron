@@ -19,3 +19,10 @@ contextBridge.exposeInMainWorld('electron', {
     return await ipcRenderer.invoke('screenshot-recognize', bounds);
   },
 })
+
+contextBridge.exposeInMainWorld('databaseAPI', {
+  addUser: (user) => ipcRenderer.invoke('add-user', user),
+  getUsers: () => ipcRenderer.invoke('get-users'),
+  updateUser: (user) => ipcRenderer.invoke('update-user', user),
+  deleteUser: (id) => ipcRenderer.invoke('delete-user', { id }),
+});

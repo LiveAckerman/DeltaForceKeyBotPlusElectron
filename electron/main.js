@@ -1,6 +1,10 @@
 const { ElectronEgg } = require('ee-core');
 const { Lifecycle } = require('./preload/lifecycle');
 const { preload } = require('./preload');
+// const path = require('path');
+// require('electron-reload')(path.join(__dirname, '../'), {
+//   electron: path.join(__dirname, '../node_modules/.bin/electron'),
+// });
 
 // new app
 const app = new ElectronEgg();
